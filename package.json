@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html -d ./dist"
+    "build": "parcel build index.html --out-dir ./dist"
   },
   "author": "\"Abdulraheem mueez\"",
   "license": "ISC",
