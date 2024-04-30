@@ -1,11 +1,11 @@
-{
+ {
   "name": "forkify",
   "version": "1.0.0",
   "description": "\"meal recipe\"",
   "main": "index.html",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html --out-dir ./dist"
+    "build": "parcel build index.html -d ./dist"
   },
   "author": "\"Abdulraheem mueez\"",
   "license": "ISC",
