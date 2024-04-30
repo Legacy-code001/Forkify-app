@@ -7,11 +7,6 @@ class RecipeView extends commonView {
   _errorMessage = 'we could not find that recipe, try another one!';
   _message = ''
 
-    // _addHandlerRender(){
-    //   ['hashChange', 'load'].forEach(e => {
-    //     window.addEventListener(e, handler)
-    //   })
-    // }
     addhandlerRender(handler){
       ['hashchange', 'load'].forEach(ev => window.addEventListener(ev, handler))
     }

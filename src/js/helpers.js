@@ -6,7 +6,7 @@ const timeout = function (s) {
       }, s * 1000);
     });
   };
-export const getJSON =async function(url){
+export const getJSON = async function(url){
 
     try
     {const res = await Promise.race([(fetch(url)), timeout(TIME_OUT)]) ;
@@ -19,7 +19,7 @@ export const getJSON =async function(url){
     throw err;
 }}
 
-export const sendJSON =async function(url, uploadData){
+export const sendJSON = async function(url, uploadData){
 
   try{
     const fetchPro = fetch(url, {

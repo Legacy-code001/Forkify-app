@@ -10,10 +10,9 @@ import bookmarksView from './views.js/bookmarkView.js';
  
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
-// import { getSearchResultPerPage } from './module.js';
 import { async } from 'regenerator-runtime';
-import searchResults from './views.js/searchResults.js';
-//  import paginationView from './views.js/paginationView.js';
+
+
 
 
 
@@ -23,19 +22,6 @@ if(module.hot){
   module.hot.accept()
 }
 
-
-
-
-// https://forkify-api.herokuapp.com/v2
-
-
-///////////////////////////////////////
-// const loadSpinner = function(parentEL){
-  
-
- 
-// parentEL.insertAdjacentHTML('afterbegin', spinnerTemp)
-//  };
 const controlRecipe = async function(){
   try{
     const id = window.location.hash.slice(1);

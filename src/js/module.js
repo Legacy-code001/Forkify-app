@@ -1,8 +1,6 @@
 import { async } from 'regenerator-runtime';
 import {API_URL, RES_PER_PAGE} from './config.js'
-// import { getJSON, sendJSON } from './helpers.js';
 import { getJSON } from './helpers.js';
-// import { searchView } from './views.js/searchView.js';
 export const state = {
     recipe: {},
     search: {
@@ -38,13 +36,6 @@ export const loadRecipe = async function (id)  {
 
          state.recipe = createRecipeObeject(url)
 
-        
-        // const res = await fetch(
-        //     `${API_URL}/${id}`);
-      
-        //    const data = await res.json();
-           
-        //    if(!res.ok) throw new Error(`${data.message}(${res.status})` )
         if(state.bookmarks.some(bookmark => bookmark.id === id))
            state.recipe.bookmarked = true; 
            else state.recipe.bookmarked = false
@@ -60,7 +51,7 @@ export const loadSearchResults = async function(query){
        try{
         state.search.query = query;
         const data = await getJSON(`${API_URL}?search=${query}`)
-        //console.log(data)
+        
        state.search.results = data.data.recipes.map(eachRec => {
           return {
             id: eachRec.id,
@@ -82,7 +73,7 @@ export const loadSearchResults = async function(query){
     export const getSearchResultPerPage = function(page = state.search.page){
         state.search.page = page;
         const start = Number((page - 1) * state.search.resultPerPage);
-        const end = Number(page * state.search.resultPerPage);
+         const end = Number(page * state.search.resultPerPage);
 
 
         return state.search.results.slice(start, end)
@@ -102,7 +93,7 @@ export const loadSearchResults = async function(query){
          state.recipe.servings = newServings
         
        }
-    //    getSearchResultPerPage(2)
+    
 
      const persistBookmark = function(){
         localStorage.setItem('bookmarks', JSON.stringify(state.bookmarks))
@@ -134,7 +125,7 @@ export const loadSearchResults = async function(query){
         const storage = localStorage.getItem('bookmarks')
         if(storage) state.bookmarks = JSON.parse(storage)
         
-        //console.log(state.bookmarks)
+        
     }
     init();
     console.log(state.bookmarks)
@@ -169,13 +160,3 @@ export const loadSearchResults = async function(query){
     //         throw err
     //     }
 
-        
-        
-        
-
-    
-
-    
-       
-
-// loadSearchResults('pizza')###
